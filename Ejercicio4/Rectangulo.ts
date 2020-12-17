@@ -5,13 +5,22 @@ class Rectangulo {
 
     readonly ancho: number
     readonly alto: number
+    private _nombre: string = ""
 
     constructor(ancho: number, alto: number) {
         this.ancho = ancho
         this.alto = alto
     }
 
-    area() {
+    get nombre() {
+        return this._nombre
+    }
+
+    set nombre(value: string) {
+        this._nombre = value
+    }
+
+    get area() {
         return this.ancho * this.alto
     }
 
@@ -23,5 +32,8 @@ class Rectangulo {
 let c1 = new Rectangulo(20, 10)
 let c2 = new Rectangulo(14, 3)
 
-console.log(c1.area())
+console.log(c1.area)
 console.log(c2.perimetro())
+
+c1.nombre = 'E'
+console.log(c1.nombre)
